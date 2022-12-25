@@ -42,7 +42,6 @@ public class C02_DropdownReusable {
         }
     }
 
-
     @Test
     public void selectFromDropdown() {
         selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
