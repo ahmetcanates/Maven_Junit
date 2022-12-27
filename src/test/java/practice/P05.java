@@ -20,7 +20,6 @@ public class P05 {
     //AfterClass ile kapatın
     static WebDriver driver;
 
-
     @BeforeClass
     public static void beforeClass() {
         WebDriverManager.chromedriver().setup();
