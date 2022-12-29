@@ -24,7 +24,6 @@ public class C02_AlertsAccept extends TestBase {
         String expectedResult = "You successfully clicked an alert";
         Assert.assertEquals(expectedResult,actualResult);
 
-       //Bir metod olusturun: sendKeysAlert
        //3. butona tıklayın, uyarıdaki metin kutusuna isminizi yazin, OK butonuna tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
     }
     /*
