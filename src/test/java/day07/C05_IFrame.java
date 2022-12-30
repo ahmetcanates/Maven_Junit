@@ -10,13 +10,12 @@ public class C05_IFrame extends TestBase {
 
     @Test
     public void iframeTest() {
-        //Iframe nedir?
         //https://testcenter.techproeducation.com/index.php?page=iframe
         driver.get("https://testcenter.techproeducation.com/index.php?page=iframe");
 
         //Ana sayfadaki An iframe with a thin black border: metnin black border yazisinin oldugunu test edelim
-        WebElement anIframetext = driver.findElement(By.xpath("//*[text()='An iframe with a thin black border:']"));
-        Assert.assertTrue(anIframetext.isDisplayed());
+        String anIframetext = driver.findElement(By.xpath("//*[text()='An iframe with a thin black border:']")).getText();
+        Assert.assertTrue(anIframetext.contains("black border"));
 
         //Ayrica ‘Applications lists’ yazisinin sayfada oldugunu test edelim
         driver.switchTo().frame(driver.findElement(By.xpath("//*[@style='border:1px solid black;']")));
