@@ -31,4 +31,19 @@ public abstract class TestBase {
     public void tearDown() {
         driver.quit();
     }
+
+    //    MULTIPLE WINDOW:
+    // Bir parametre alir: Gecis yapmak istedigim sayfanin title'i
+    //ORNEK: switchToWindow("New Window")
+    public static void switchToWindow(String targetTitle) {
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(targetTitle)) {
+                return;//CIK. break;
+            }
+        }
+        driver.switchTo().window(origin);
+    }
+
 }
