@@ -23,5 +23,8 @@ public class C03_FileExist {
 
         boolean isExist = Files.exists(Paths.get(dosyaYolu));
         Assert.assertTrue(isExist);
+        /*
+        1. fail -> PATH YANLIS : dosya masa ustunde degil, dosya adi yanlis, yada arada onedrive gibi ex dosyalar olarak
+         */
     }
 }
