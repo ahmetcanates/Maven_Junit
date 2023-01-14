@@ -33,6 +33,28 @@ public class C02_WebTables extends TestBase {
     }
 
     @Test
-    public void name() {
+    public void row3Print() {
+        //TASK 2 : 3.Row datalarini print edin.
+        driver.get("https://the-internet.herokuapp.com/tables");
+        List<WebElement> row3Elements = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr[3]//td"));
+        row3Elements.forEach(veri-> System.out.println(veri.getText()));
+    }
+
+    //TASK 3 : Son row'daki datalari print edin.
+
+    @Test
+    public void sonSatirVerileri() {
+        driver.get("https://the-internet.herokuapp.com/tables");
+        List<WebElement> sonSatir = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr[last()]//td"));
+        sonSatir.forEach(veri-> System.out.println(veri.getText()));
+    }
+
+    //Task 4 : 5. Column datalarini print edin
+
+    @Test
+    public void sutun5Test() {
+        driver.get("https://the-internet.herokuapp.com/tables");
+        List<WebElement> sutun5 = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr//td[5]"));
+        sutun5.forEach(veri-> System.out.println(veri.getText()));
     }
 }
