@@ -57,4 +57,18 @@ public class C02_WebTables extends TestBase {
         List<WebElement> sutun5 = driver.findElements(By.xpath("//table[@id='table1']//tbody//tr//td[5]"));
         sutun5.forEach(veri-> System.out.println(veri.getText()));
     }
+    //Task 5 : Iki parametreli bir Java metot oluşturalım: printData
+    //Parameter 1 = row numarasi
+    //Parameter 2 = column numarasi
+    //printData(2,3);  => 2nd row, 3rd column daki datayı print etsin
+
+    public void printData(int satir, int sutun){
+        driver.get("https://the-internet.herokuapp.com/tables");
+        String myXpath = "//table[@id='table1']//tbody//tr["+satir+"]//td["+sutun+"]";
+        System.out.println(driver.findElement(By.xpath(myXpath)).getText());
+    }
+    @Test
+    public void printDataTest(){
+        printData(2,3);
+    }
 }
