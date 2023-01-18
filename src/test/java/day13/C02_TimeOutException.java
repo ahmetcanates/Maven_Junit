@@ -13,13 +13,13 @@ public class C02_TimeOutException extends TestBase {
     public void timeOutException(){
         /*
         TIMEOUTEXCEPTION NE ZAMAN ALIRIM?????
-​
-        => TimeOutException ; explisit wait kullanildigi zaman ve element bulunamadiginda alinir
-​
+
+        => TimeOutException ; explicit wait kullanildigi zaman ve element bulunamadiginda alinir
+
         Explicit wait ve yanlis locator ---> timeoutException
         Explicit wait & dogru locator & sure yeterli degil ---> timeoutException
         Explicit wait & dogru locator & sure yeterli & iframe var ---> timeOutException
-​
+
         NASIL COZERIZ?
         -Oncelikle sureyi artirabiliriz
         -Farkli explicit wait kullanilabilir.
