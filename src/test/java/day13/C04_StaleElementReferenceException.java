@@ -15,7 +15,6 @@ public class C04_StaleElementReferenceException extends TestBase {
 
     COZUM NEDIR???
     -Elemani tekrar bulmak
-
      */
 
     @Test
