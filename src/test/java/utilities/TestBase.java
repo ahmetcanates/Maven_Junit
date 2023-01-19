@@ -200,4 +200,9 @@ public abstract class TestBase {
         FileUtils.copyFile(image,new File(path));
     }
 
+    //SCROLLINTOVIEWJS
+    public void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
 }
