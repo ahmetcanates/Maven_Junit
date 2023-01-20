@@ -205,4 +205,43 @@ public abstract class TestBase {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView(true)", element);
     }
+
+    //    SAYFANIN EN ALTINA IN
+//    Bu method ile sayfanin en altina inebiliriz
+    public void scrollEndJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+    //    Bu metot ile sayfanin en ustune cikabiliriz
+    public void scrollTopJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+    //Bu metot ile belirli bir elemente JS executor ile tiklanabilir
+    public void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", element);
+    }
+
+    //girmis oldugum metni elemente yazdirir
+    //bu method sendKeys methoduna bir alternatiftir
+    //sendKeys oncelikli tercihimizdir
+    public void typeWithJS(WebElement element, String metin) {
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value', '"+metin+"')",element);
+    }
+
+    //    input elementindeki degerleri(value) al
+//   Belirli bir WebElement'in id değerini String olarak alır ve value attribute değerini String olarak döndürür
+//    return
+//    document HTML'E GIT
+//    .getElementById('" + idOfElement + "') ID'si VERILEN ELEMENTI BUL
+//    .value")
+//    .toString();
+    public void getValueByJS(String idOfElement) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
+        System.out.println("Kutudaki value: " + text);
+    }
 }
