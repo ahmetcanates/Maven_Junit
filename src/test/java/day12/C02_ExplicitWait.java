@@ -32,6 +32,7 @@ public class C02_ExplicitWait extends TestBase {
         String helloWorldText = helloWorldElement.getText();
         Assert.assertEquals("Hello World!",helloWorldText);
 
+
     }
 
 }
